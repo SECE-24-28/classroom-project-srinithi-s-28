@@ -1,9 +1,11 @@
 const express = require('express');
 const mdb=require('mongoose');
+const cors = require('cors');
 const app=express();
 const PORT=8001;
 
-// Middleware to parse JSON
+// Middleware
+app.use(cors());
 app.use(express.json());
 mdb.connect('mongodb://localhost:27017/MERN').then(()=>{
     console.log("Mongodb connection successfull")
@@ -32,6 +34,16 @@ app.post('/signup',(req, res)=>{
     const{email,username,password} = req.body;
     console.log('Received signup data:', {email, username, password});
     res.json({"Message":"Signup successful", "data": {email, username}})
+})
+
+app.get('/login',(req, res)=>{
+    res.send("Login page - Use POST method to submit login data")
+})
+
+app.post('/login',(req, res)=>{
+    const{email, password} = req.body;
+    console.log('Received login data:', {email, password});
+    res.json({"Message":"Login successful", "data": {email}})
 })
 
 app.listen(PORT,()=>{
