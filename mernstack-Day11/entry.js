@@ -84,5 +84,5 @@ app.get("/static", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(Server Started Successfully in the port ${PORT});
+  console.log(`Server Started Successfully in the port ${PORT}`);
 });
