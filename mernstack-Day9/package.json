@@ -1,0 +1,16 @@
+{
+  "name": "mernstack-day9",
+  "version": "1.0.0",
+  "description": "Day 9 - Node.js Backend",
+  "main": "entry.js",
+  "scripts": {
+    "start": "node entry.js",
+    "dev": "nodemon entry.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "keywords": ["nodejs", "express", "backend"],
+  "author": "SECE Student",
+  "license": "ISC"
+}
